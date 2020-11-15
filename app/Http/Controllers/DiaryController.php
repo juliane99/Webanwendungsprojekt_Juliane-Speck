@@ -14,7 +14,10 @@ class DiaryController extends Controller
      */
     public function index()
     {
-        //
+        $diaries = Diary::latest()->paginate(5);
+    
+        return view('diaries.index',compact('diaries'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -23,8 +26,8 @@ class DiaryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+        return view('diaries.create');
     }
 
     /**
@@ -35,7 +38,15 @@ class DiaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+    
+        Diary::create($request->all());
+     
+        return redirect()->route('diaries.index')
+                        ->with('success','Diary Entry created successfully.');
     }
 
     /**
@@ -46,7 +57,7 @@ class DiaryController extends Controller
      */
     public function show(Diary $diary)
     {
-        //
+        return view('diaries.show',compact('diary'));
     }
 
     /**
@@ -57,7 +68,7 @@ class DiaryController extends Controller
      */
     public function edit(Diary $diary)
     {
-        //
+        return view('diaries.edit',compact('diary'));
     }
 
     /**
@@ -69,7 +80,15 @@ class DiaryController extends Controller
      */
     public function update(Request $request, Diary $diary)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+    
+        $diary->update($request->all());
+    
+        return redirect()->route('diaries.index')
+                        ->with('success','Diary Entry updated successfully');
     }
 
     /**
@@ -80,6 +99,9 @@ class DiaryController extends Controller
      */
     public function destroy(Diary $diary)
     {
-        //
+        $diary->delete();
+    
+        return redirect()->route('diaries.index')
+                        ->with('success','Diary Entry deleted successfully');
     }
 }
