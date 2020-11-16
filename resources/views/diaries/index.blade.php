@@ -5,8 +5,6 @@
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Travel Diary</h2>
-            </div>
-            <div class="pull-right">
                 <a class="btn btn-info" href="{{ route('diaries.create') }}">Create New Entry</a>
             </div>
         </div>
@@ -20,9 +18,9 @@
    
     <table class="table table-hover">
         <tr>
-            <th>No</th>
-            <th>title</th>
-            <th>body</th>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Text</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($diaries as $diary)
@@ -33,14 +31,14 @@
             <td>
                 <form action="{{ route('diaries.destroy',$diary->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('diaries.show',$diary->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('diaries.show',$diary->id) }}">View</a>
     
-                    <a class="btn btn-primary" href="{{ route('diaries.edit',$diary->id) }}">Edit</a>
+                    <a class="btn btn-info" href="{{ route('diaries.edit',$diary->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-info">Delete</button>
                 </form>
             </td>
         </tr>
@@ -50,3 +48,4 @@
     {!! $diaries->links() !!}
       
 @endsection
+
