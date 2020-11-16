@@ -16,13 +16,14 @@
         <style>
             body {
                 font-family: 'Roboto', sans-serif;
-                background-color: CornflowerBlue;
-                color: white;
+                text-align: center;
             }
         </style>
     </head>
-    <body>
-       
-       <h1> Reisetagebuch </h1>
-    </body>
+        <body>
+            <h1>Travel Diary</h1>
+            <img src="home-image.jpg" alt="Responsive image">
+        </body>
 </html>
+
+
