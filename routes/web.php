@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DiaryController;
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +14,6 @@ use App\Http\Controllers\DiaryController;
 */
 Route::resource('diaries', DiaryController::class);
   
-Route::resource('products', ProductController::class);
 
 Route::get('/', function () {
     return view('welcome');
