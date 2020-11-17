@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Diary;
 use Illuminate\Http\Request;
+use Image;
 
 class DiaryController extends Controller
 {
@@ -44,9 +45,23 @@ class DiaryController extends Controller
         ]);
     
         Diary::create($request->all());
+
+        
      
         return redirect()->route('diaries.index')
                         ->with('success','Diary Entry created successfully.');
+
+
+                        if ($request->hasFile('featured_image')) {
+                            $image = $request->file('featured_image');
+                            $filename = time() . '.' . $image->getClientOriginalExtension();
+                            $location = public_path('images/' . $filename);
+                            Image::make($image)->resize(800, 400)->save($location);
+                
+                            $diaries->image = $filename;
+                        }
+
+        
     }
 
     /**
