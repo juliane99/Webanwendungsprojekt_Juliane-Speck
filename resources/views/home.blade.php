@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="text-align: center;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,6 +19,8 @@
                     <img src="home-screen.jpg" alt="Responsive image">
                 </div>
             </div>
+
+            <a class="btn btn-info" href='/diaries' style="margin-top: 3em;">View Diary</a>
         </div>
     </div>
 </div>
