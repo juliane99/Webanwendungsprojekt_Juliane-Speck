@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    You are logged in, {{Auth::user()->name}}
 
                     <img src="home-screen.jpg" alt="Responsive image">
                 </div>
