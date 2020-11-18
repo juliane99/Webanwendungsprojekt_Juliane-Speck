@@ -14,17 +14,7 @@
         </style>
 
         <style>
-            body {
-                font-family: 'Indie Flower', cursive;
-                text-align: center;
-                background-color: #1c1c1c;
-            }
-
-            h1 {
-                display: block;
-                font-size: 3em;
-                color: white;
-}
+            
 
         </style>
     </head>
