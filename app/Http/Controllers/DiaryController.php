@@ -45,19 +45,8 @@ class DiaryController extends Controller
             'featured_image' => 'image|nullable|max:1999'
         ]);
 
-        
-    
-        Diary::create($request->all());
+                        // Handle File Upload
 
-        // Handle File Upload
-
-        
-        
-     
-        return redirect()->route('diaries.index')
-                        ->with('success','Diary Entry created successfully.');
-
-        
                         if($request->hasFile('featured_image')){
 
                             // Get filename with extension
@@ -81,8 +70,12 @@ class DiaryController extends Controller
                             $fileNameToStore = 'noimage.jpg';
                         }
                 
-                        $diary->featured_image = $fileNameToStore;
                 
+
+                        Diary::create($request->all());
+
+         return redirect()->route('diaries.index')
+                        ->with('success','Diary Entry created successfully.');
 
         
     }
