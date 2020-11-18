@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <a class="btn btn-info" href="{{ route('diaries.index') }}"> Back</a>
+                <a class="btn btn-info" href="{{ route('diaries.index') }}" style="margin-bottom: 3em;"> Back</a>
                 <h2>Edit Entry</h2>
             </div>
         </div>
