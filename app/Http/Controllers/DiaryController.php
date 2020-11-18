@@ -42,14 +42,47 @@ class DiaryController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
+            'featured_image' => 'image|nullable|max:1999'
         ]);
+
+        
     
         Diary::create($request->all());
 
+        // Handle File Upload
+
+        
         
      
         return redirect()->route('diaries.index')
                         ->with('success','Diary Entry created successfully.');
+
+        
+                        if($request->hasFile('featured_image')){
+
+                            // Get filename with extension
+                            $filenameWithExt = $request->file('featured_image')->getClientOriginalName();
+                
+                            // Get just filename
+                            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                
+                            // get just ext
+                            $extension = $request->file('featured_image')->getClientOriginalExtension();
+                
+                            // filename to store
+                
+                            $fileNameToStore = $filename. '_'.time().'.'.$extension;
+                
+                            //upload Image
+                
+                            $path = $request->file('featured_image')->storeAs('public/featured_images', $fileNameToStore);
+                            
+                        } else {
+                            $fileNameToStore = 'noimage.jpg';
+                        }
+                
+                        $diary->featured_image = $fileNameToStore;
+                
 
         
     }

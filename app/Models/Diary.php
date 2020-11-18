@@ -10,6 +10,6 @@ class Diary extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'body'
+        'title', 'body', 'featured_image'
     ];
 }

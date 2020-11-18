@@ -14,7 +14,7 @@
             <div class="form-group">
                 <strong><Title></Title></strong>
                <h2> {{ $diary->title }} </h2>
-             
+             <img src="{{ Storage::url($diary->featured_image) }}" height="400" width="800" />
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
