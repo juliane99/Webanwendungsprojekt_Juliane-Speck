@@ -29,8 +29,7 @@
         </style>
     </head>
         <body>
-            <h1>DAS REISETAGEBUCH</h1>
-            <img src="home-screen.jpg" alt="Responsive image">
+            
         </body>
 </html>
 

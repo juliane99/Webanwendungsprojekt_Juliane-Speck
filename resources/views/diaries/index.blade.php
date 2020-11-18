@@ -4,7 +4,6 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Travel Diary</h2>
                 <a class="btn btn-info" href="{{ route('diaries.create') }}">Create New Entry</a>
             </div>
         </div>

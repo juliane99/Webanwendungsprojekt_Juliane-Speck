@@ -15,9 +15,13 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <img src="home-screen.jpg" alt="Responsive image">
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+
