@@ -26,7 +26,7 @@
         @foreach ($diaries as $diary)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $diary->updated_at }}</td>
+            <td>{{ $diary->created_at }}</td>
             <td>{{ $diary->title }}</td>
             <td>{{ substr($diary->body, 0,  50) }}</td>
             <td>
