@@ -46,7 +46,7 @@
         @endforeach
     </table>
   
-    {!! $diaries->links() !!}
+   {!! $diaries->links() !!}
       
 @endsection
 
