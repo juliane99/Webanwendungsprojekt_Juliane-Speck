@@ -15,7 +15,7 @@ class AddFeaturedImageToDiaries extends Migration
     {
         Schema::table('diaries', function (Blueprint $table) {
             
-            $table->string('featured_image');
+            $table->string('featured_image')->nullable();
         });
     }
 
