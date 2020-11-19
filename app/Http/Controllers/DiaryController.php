@@ -19,10 +19,10 @@ class DiaryController extends Controller
      */
     public function index()
     {
-        $diaries = Diary::latest()->paginate(5);
+        $diaries = Diary::latest()->paginate(20);
     
         return view('diaries.index',compact('diaries'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 20);
     }
 
     /**
