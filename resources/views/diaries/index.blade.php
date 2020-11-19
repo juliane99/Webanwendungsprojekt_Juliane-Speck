@@ -21,7 +21,7 @@
             <th>Date</th>
             <th>Title</th>
             <th>Text</th>
-            <th width="280px">Action</th>
+            <th width="280px">Options</th>
         </tr>
         @foreach ($diaries as $diary)
         <tr>
