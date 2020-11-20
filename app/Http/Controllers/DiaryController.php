@@ -49,6 +49,7 @@ class DiaryController extends Controller
             'featured_image' => 'image|nullable|max:1999'
         ]);
 
+        
                         // Handle File Upload
 
                         if($request->hasFile('featured_image')){
@@ -74,14 +75,27 @@ class DiaryController extends Controller
                             $fileNameToStore = 'noimage.jpg';
                         }
                 
+                      
                 
 
-                        Diary::create($request->all());
 
-         return redirect()->route('diaries.index')
-                        ->with('success','Diary Entry created successfully.');
+        $diary = new Diary;
+      //  $path = $request->file('featured_image')->store('public/featured_images');
 
-        
+
+        $diary->title = $request->title;
+        $diary->body = $request->body;
+      //  $diary->featured_image = $path;
+        $diary->featured_image = $fileNameToStore;
+        $diary->save();
+
+                 return redirect()->route('diaries.index')
+                      ->with('success','Diary Entry created successfully.');
+
+
+
+                   
+
     }
 
     /**
