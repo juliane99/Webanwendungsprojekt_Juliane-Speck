@@ -16,13 +16,9 @@
                <h2> {{ $diary->title }} </h2>
                <p style="font-size:18px;">  {{ $diary->created_at }} </p>
 
-             <!-- <img src="{{ Storage::url($diary->featured_image) }}" height="400" width="800" /> -->
-
-             
-              <!--  <img src="{{ url('/featured_images/'.$diary->featured_image) }}" alt="" title="" /> -->
+            <!-- <img src="{{ Storage::url($diary->featured_image) }}" height="400" width="800" /> -->
 
             <!-- <img src="/storage/featured_images/{{$diary->featured_image}}" height="400" width="800" /> -->
-
 
             </div>
         </div>
