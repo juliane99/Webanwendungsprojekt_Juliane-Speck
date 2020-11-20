@@ -28,6 +28,7 @@
                 {{ $diary->body }}
             </div>
         </div>
+        <button onclick="window.print()" type="button" class="btn btn-outline-info">Print this Entry</button>
     </div>
 @endsection
 
